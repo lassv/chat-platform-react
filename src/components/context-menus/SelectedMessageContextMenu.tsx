@@ -1,11 +1,11 @@
-import { Dispatch, FC, SetStateAction, useContext } from 'react';
-import { useDispatch } from 'react-redux';
-import { useParams } from 'react-router-dom';
-import { AppDispatch } from '../../store';
-import { deleteMessageThunk } from '../../store/messageSlice';
-import { AuthContext } from '../../utils/context/AuthContext';
-import { MessageMenuContext } from '../../utils/context/MessageMenuContext';
-import { ContextMenuStyle } from '../../utils/styles';
+import { Dispatch, FC, SetStateAction, useContext } from "react";
+import { useDispatch } from "react-redux";
+import { useParams } from "react-router-dom";
+import { AppDispatch } from "../../store";
+import { deleteMessageThunk } from "../../store/messageSlice";
+import { AuthContext } from "../../utils/context/AuthContext";
+import { MessageMenuContext } from "../../utils/context/MessageMenuContext";
+import { ContextMenuStyle } from "../../utils/styles";
 
 type Props = {
   points: { x: number; y: number };
@@ -40,6 +40,9 @@ export const SelectedMessageContextMenu: FC<Props> = ({
           <li onClick={deleteMessage}>Delete</li>
         )}
         {message?.author.id === user?.id && <li onClick={editMessage}>Edit</li>}
+        {message?.author.id !== user?.id && (
+          <p style={{ color: "#989898" }}>This is not your message.</p>
+        )}
       </ul>
     </ContextMenuStyle>
   );

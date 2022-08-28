@@ -1,14 +1,14 @@
-import { formatRelative } from 'date-fns';
-import { Dispatch, SetStateAction } from 'react';
+import { formatRelative } from "date-fns";
+import { Dispatch, SetStateAction } from "react";
 import {
   MessageItemContainer,
   MessageItemAvatar,
   MessageItemDetails,
   MessageItemHeader,
   MessageItemContent,
-} from '../../utils/styles';
-import { User, MessageType } from '../../utils/types';
-import { EditMessageContainer } from './EditMessageContainer';
+} from "../../utils/styles";
+import { User, MessageType } from "../../utils/types";
+import { EditMessageContainer } from "./EditMessageContainer";
 
 type FormattedMessageProps = {
   user?: User;
@@ -38,10 +38,11 @@ export const FormattedMessage: React.FC<FormattedMessageProps> = ({
           <span
             className="authorName"
             style={{
-              color: user?.id === message.author.id ? '#989898' : '#5E8BFF',
+              color: user?.id === message.author.id ? "#989898" : "#5E8BFF",
             }}
           >
-            {message.author.firstName} {message.author.lastName}
+            {message.author.firstName} {message.author.lastName}{" "}
+            {user?.id === message.author.id ? "(Me)" : ""}
           </span>
           <span className="time">
             {formatRelative(new Date(message.createdAt), new Date())}

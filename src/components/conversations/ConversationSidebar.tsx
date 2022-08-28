@@ -3,16 +3,16 @@ import {
   ConversationSidebarHeader,
   ConversationSidebarItem,
   ConversationSidebarStyle,
-} from '../../utils/styles';
-import { TbEdit } from 'react-icons/tb';
-import { FC, useContext, useState } from 'react';
-import { ConversationType } from '../../utils/types';
-import styles from './index.module.scss';
-import { useNavigate } from 'react-router-dom';
-import { CreateConversationModal } from '../modals/CreateConversationModal';
-import { AuthContext } from '../../utils/context/AuthContext';
-import { useSelector, useDispatch } from 'react-redux';
-import { RootState } from '../../store';
+} from "../../utils/styles";
+import { TbEdit } from "react-icons/tb";
+import { FC, useContext, useState } from "react";
+import { ConversationType } from "../../utils/types";
+import styles from "./index.module.scss";
+import { useNavigate } from "react-router-dom";
+import { CreateConversationModal } from "../modals/CreateConversationModal";
+import { AuthContext } from "../../utils/context/AuthContext";
+import { useSelector, useDispatch } from "react-redux";
+import { RootState } from "../../store";
 
 type Props = {
   conversations: ConversationType[];
@@ -38,7 +38,7 @@ export const ConversationSidebar: FC<Props> = () => {
         <ConversationSidebarHeader>
           <h1>Conversations</h1>
           <div onClick={() => setShowModal(!showModal)}>
-            <TbEdit size={40} />
+            <TbEdit size={40} style={{ cursor: "pointer" }} />
           </div>
         </ConversationSidebarHeader>
         <ConversationSidebarContainer>
