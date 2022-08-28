@@ -1,15 +1,15 @@
-import styled, { css } from 'styled-components';
+import styled, { css } from "styled-components";
 import {
   ContextMenuProps,
   InputContainerProps,
   MessageItemContentProps,
   PageProps,
-} from './styleTypes';
+} from "./styleTypes";
 
 export const SIDEBAR_WIDTH = 400;
 
 export const InputField = styled.input`
-  font-family: 'Inter';
+  font-family: "Inter";
   outline: none;
   border: none;
   background-color: inherit;
@@ -22,7 +22,7 @@ export const InputField = styled.input`
 `;
 
 export const InputContainer = styled.div<InputContainerProps>`
-  background-color: ${(prop) => prop.backgroundColor || '#131313'};
+  background-color: ${(prop) => prop.backgroundColor || "#131313"};
   padding: 12px 16px;
   border-radius: 10px;
   width: 100%;
@@ -40,7 +40,7 @@ export const Button = styled.button`
   width: 100%;
   outline: none;
   border: none;
-  font-family: 'Inter';
+  font-family: "Inter";
   font-size: 16px;
   background-color: #2b09ff;
   color: #fff;
@@ -158,7 +158,7 @@ export const ModalContentBodyStyle = styled.div`
 `;
 
 export const TextField = styled.textarea`
-  font-family: 'Inter';
+  font-family: "Inter";
   outline: none;
   border: none;
   background-color: inherit;
@@ -230,7 +230,7 @@ export const MessageInput = styled.input`
   outline: none;
   border: none;
   color: #454545;
-  font-family: 'Inter';
+  font-family: "Inter";
   box-sizing: border-box;
   font-size: 18px;
   width: 100%;
@@ -320,7 +320,7 @@ export const EditMessageInputField = styled.input`
   border: none;
   background-color: #222;
   color: #bababa;
-  font-family: 'Inter';
+  font-family: "Inter";
   box-sizing: border-box;
   font-size: 15px;
   padding: 18px 22px;
@@ -334,4 +334,46 @@ export const EditMessageActionsContainer = styled.div`
   & span {
     color: #1d77ff;
   }
+`;
+
+export const StyledSpinner = styled.svg`
+  animation: rotate 2s linear infinite;
+  margin: -25px 0 0 -25px;
+  width: 50px;
+  height: 50px;
+
+  & .path {
+    stroke: #1d77ff;
+    stroke-linecap: round;
+    animation: dash 1.5s ease-in-out infinite;
+  }
+
+  @keyframes rotate {
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+  @keyframes dash {
+    0% {
+      stroke-dasharray: 1, 150;
+      stroke-dashoffset: 0;
+    }
+    50% {
+      stroke-dasharray: 90, 150;
+      stroke-dashoffset: -35;
+    }
+    100% {
+      stroke-dasharray: 90, 150;
+      stroke-dashoffset: -124;
+    }
+  }
+`;
+
+export const SpinnerContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
 `;

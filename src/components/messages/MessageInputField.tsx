@@ -1,6 +1,6 @@
-import React, { Dispatch, FC, SetStateAction } from 'react';
-import { MessageInputContainer, MessageInput } from '../../utils/styles';
-import styles from './index.module.scss';
+import React, { Dispatch, FC, SetStateAction } from "react";
+import { MessageInputContainer, MessageInput } from "../../utils/styles";
+import styles from "./index.module.scss";
 
 type Props = {
   content: string;
@@ -22,6 +22,7 @@ export const MessageInputField: FC<Props> = ({
       <MessageInputContainer>
         <form onSubmit={sendMessage} className={styles.form}>
           <MessageInput
+            placeholder="Type a message..."
             value={content}
             onChange={updateContent}
             onKeyDown={sendTypingStatus}
