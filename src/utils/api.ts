@@ -13,7 +13,7 @@ import {
   UserCredentialsParams,
 } from './types';
 
-const API_URL = "https://chat-platform-nestjs-production.up.railway.app/api";
+const API_URL = process.env.REACT_APP_API_URL;
 const config: AxiosRequestConfig = { withCredentials: true };
 
 export const postRegisterUser = (data: CreateUserParams) =>
